@@ -3,29 +3,27 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Odeljenje } from '../models/odeljenje';
 
-@Injectable({ providedIn: 'root' })
+@Injectable({
+  providedIn: 'root'
+})
 export class OdeljenjeService {
-  private url = 'http://localhost:8082/odeljenje';
+  private readonly API_URL = 'http://localhost:8082/odeljenje';
 
   constructor(private http: HttpClient) {}
 
-  getAll(): Observable<Odeljenje[]> {
-    return this.http.get<Odeljenje[]>(this.url);
+  public getAllOdeljenje(): Observable<Odeljenje[]> {
+    return this.http.get<Odeljenje[]>(this.API_URL);
   }
 
-  getById(id: number): Observable<Odeljenje> {
-    return this.http.get<Odeljenje>(`${this.url}/${id}`);
+  public addOdeljenje(odeljenje: Odeljenje): Observable<any> {
+    return this.http.post(this.API_URL, odeljenje);
   }
 
-  save(odeljenje: Odeljenje): Observable<Odeljenje> {
-    return this.http.post<Odeljenje>(this.url, odeljenje);
+  public updateOdeljenje(odeljenje: Odeljenje): Observable<any> {
+    return this.http.put(`${this.API_URL}/${odeljenje.id}`, odeljenje);
   }
 
-  update(id: number, odeljenje: Odeljenje): Observable<Odeljenje> {
-    return this.http.put<Odeljenje>(`${this.url}/${id}`, odeljenje);
-  }
-
-  delete(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.url}/${id}`);
+  public deleteOdeljenje(id: number): Observable<any> {
+    return this.http.delete(`${this.API_URL}/${id}`);
   }
 }

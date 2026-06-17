@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-author',
-  imports: [],
+  standalone: true,
+  imports: [MatCardModule],
   templateUrl: './author.html',
-  styleUrl: './author.css',
+  styleUrl: './author.css'
 })
-export class Author {}
+export class AuthorComponent {}

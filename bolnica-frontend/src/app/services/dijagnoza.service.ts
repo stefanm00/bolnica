@@ -3,29 +3,27 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Dijagnoza } from '../models/dijagnoza';
 
-@Injectable({ providedIn: 'root' })
+@Injectable({
+  providedIn: 'root'
+})
 export class DijagnozaService {
-  private url = 'http://localhost:8082/dijagnoza';
+  private readonly API_URL = 'http://localhost:8082/dijagnoza';
 
   constructor(private http: HttpClient) {}
 
-  getAll(): Observable<Dijagnoza[]> {
-    return this.http.get<Dijagnoza[]>(this.url);
+  public getAllDijagnoza(): Observable<Dijagnoza[]> {
+    return this.http.get<Dijagnoza[]>(this.API_URL);
   }
 
-  getById(id: number): Observable<Dijagnoza> {
-    return this.http.get<Dijagnoza>(`${this.url}/${id}`);
+  public addDijagnoza(dijagnoza: Dijagnoza): Observable<any> {
+    return this.http.post(this.API_URL, dijagnoza);
   }
 
-  save(dijagnoza: Dijagnoza): Observable<Dijagnoza> {
-    return this.http.post<Dijagnoza>(this.url, dijagnoza);
+  public updateDijagnoza(dijagnoza: Dijagnoza): Observable<any> {
+    return this.http.put(`${this.API_URL}/${dijagnoza.id}`, dijagnoza);
   }
 
-  update(id: number, dijagnoza: Dijagnoza): Observable<Dijagnoza> {
-    return this.http.put<Dijagnoza>(`${this.url}/${id}`, dijagnoza);
-  }
-
-  delete(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.url}/${id}`);
+  public deleteDijagnoza(id: number): Observable<any> {
+    return this.http.delete(`${this.API_URL}/${id}`);
   }
 }

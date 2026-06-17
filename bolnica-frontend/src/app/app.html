@@ -1,1 +1,48 @@
-<h1>Ovo je frontend app</h1>
+<mat-toolbar class="gornja-traka">
+  <span>Bolnica - IS </span>
+  <span class="spacer"></span>
+  <a mat-button routerLink="/about">O aplikaciji</a>
+  <a mat-button routerLink="/author">O autoru</a>
+</mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container">
+  
+  <mat-sidenav mode="side" opened class="sidenav">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/home"><mat-icon>home</mat-icon> Početna stranica</a>
+    </mat-nav-list>
+
+    <mat-accordion>
+      <mat-expansion-panel class="mat-elevation-z0" style="background-color: transparent; margin-top: 10px;">
+        <mat-expansion-panel-header>
+          <mat-panel-title style="display: flex; align-items: center; gap: 8px;">
+            <mat-icon>business</mat-icon> Organizacija-objekat
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-nav-list>
+          <a mat-list-item routerLink="/bolnica"><mat-icon>local_hospital</mat-icon> Bolnica</a>
+          <a mat-list-item routerLink="/odeljenje"><mat-icon>meeting_room</mat-icon> Odeljenje</a>
+        </mat-nav-list>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel class="mat-elevation-z0" style="background-color: transparent; margin-top: 20px;">
+        <mat-expansion-panel-header>
+          <mat-panel-title style="display: flex; align-items: center; gap: 8px;">
+            <mat-icon>medical_services</mat-icon> Medicinska evidencija
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-nav-list>
+        <a mat-list-item routerLink="/pacijent"><mat-icon>personal_injury</mat-icon> Pacijent</a>
+          <a mat-list-item routerLink="/dijagnoza"><mat-icon>medical_information</mat-icon> Dijagnoza</a>
+          
+        </mat-nav-list>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content class="content">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

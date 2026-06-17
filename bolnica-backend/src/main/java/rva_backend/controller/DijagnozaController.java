@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import rva_backend.models.Dijagnoza;
 import rva_backend.service.DijagnozaService;
 
+@CrossOrigin
 @RestController
 public class DijagnozaController {
 

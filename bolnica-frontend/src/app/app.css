@@ -1,0 +1,27 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.sidenav-container {
+  height: calc(100vh - 64px); 
+}
+
+.sidenav {
+  width: 220px;
+  background-color: #E3F2FD; 
+  border-right: 1px solid #C6E0F5; 
+}
+
+.content {
+  padding: 20px;
+  background-color: #fafafa;
+}
+
+mat-icon {
+  margin-right: 8px;
+  vertical-align: middle;
+}
+.gornja-traka {
+  background-color: #D4EAF7; /* Za nijansu tamnija od bočnog menija */
+  border-bottom: 1px solid #C6E0F5; /* Zadržavamo istu ivicu da se sve lepo uklopi */
+}

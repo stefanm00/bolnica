@@ -13,6 +13,7 @@ import rva_backend.models.Odeljenje;
 import rva_backend.service.BolnicaService;
 import rva_backend.service.OdeljenjeService;
 
+@CrossOrigin
 @RestController
 public class OdeljenjeController {
 

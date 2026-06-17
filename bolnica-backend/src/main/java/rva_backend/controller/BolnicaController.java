@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import rva_backend.models.Bolnica;
 import rva_backend.service.BolnicaService;
 
+@CrossOrigin
 @RestController
 public class BolnicaController {
 

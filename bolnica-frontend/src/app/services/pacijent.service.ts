@@ -3,29 +3,27 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Pacijent } from '../models/pacijent';
 
-@Injectable({ providedIn: 'root' })
+@Injectable({
+  providedIn: 'root'
+})
 export class PacijentService {
-  private url = 'http://localhost:8082/pacijent';
+  private readonly API_URL = 'http://localhost:8082/pacijent';
 
   constructor(private http: HttpClient) {}
 
-  getAll(): Observable<Pacijent[]> {
-    return this.http.get<Pacijent[]>(this.url);
+  public getAllPacijent(): Observable<Pacijent[]> {
+    return this.http.get<Pacijent[]>(this.API_URL);
   }
 
-  getById(id: number): Observable<Pacijent> {
-    return this.http.get<Pacijent>(`${this.url}/${id}`);
+  public addPacijent(pacijent: Pacijent): Observable<any> {
+    return this.http.post(this.API_URL, pacijent);
   }
 
-  save(pacijent: Pacijent): Observable<Pacijent> {
-    return this.http.post<Pacijent>(this.url, pacijent);
+  public updatePacijent(pacijent: Pacijent): Observable<any> {
+    return this.http.put(`${this.API_URL}/${pacijent.id}`, pacijent);
   }
 
-  update(id: number, pacijent: Pacijent): Observable<Pacijent> {
-    return this.http.put<Pacijent>(`${this.url}/${id}`, pacijent);
-  }
-
-  delete(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.url}/${id}`);
+  public deletePacijent(id: number): Observable<any> {
+    return this.http.delete(`${this.API_URL}/${id}`);
   }
 }

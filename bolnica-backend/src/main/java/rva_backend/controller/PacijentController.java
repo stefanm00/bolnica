@@ -14,6 +14,7 @@ import rva_backend.service.DijagnozaService;
 import rva_backend.service.OdeljenjeService;
 import rva_backend.service.PacijentService;
 
+@CrossOrigin
 @RestController
 public class PacijentController {
 
