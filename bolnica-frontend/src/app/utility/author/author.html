@@ -1,10 +1,34 @@
 <div class="container">
   <mat-card class="info-card">
-    <mat-card-title style="margin-bottom: 20px;">O autoru</mat-card-title>
+    <div style="padding: 25px 25px 0 25px;">
+      <mat-card-title style="margin-bottom: 5px; margin-left: 5px; text-align: left;">O autoru</mat-card-title>
+    </div>
+    
     <mat-card-content>
-      <p><b>Ime i prezime:</b> [Tvoje Ime i Prezime]</p>
-      <p><b>Broj indeksa:</b> [Tvoj broj indeksa]</p>
-      <p><b>Studijski program:</b> Informacioni inženjering</p>
+      <div class="author-flex-row">
+        
+        <div class="author-details">
+          <p><b>Ime i prezime:</b> Stefan Malić</p>
+          <p><b>Datum rođenja:</b> 02.12.2000.</p>
+          <p><b>Mesto rođenja:</b> Novi Sad</p>
+          <p><b>Broj indeksa:</b> IM 164/2019</p>
+          <p><b>Smer:</b> Inženjerski (informacioni) menadžment</p>
+          <p><b>Fakultet:</b> Fakultet tehničkih nauka (FTN)</p>
+          <p><b>Predmet:</b> Razvoj višeslojnih aplikacija</p>
+        </div>
+
+        <div class="author-img">
+          <img src="/slikaa.jpg" alt="slika" class="author-img">
+        </div>
+
+      </div>
     </mat-card-content>
   </mat-card>
+
+  <div class="back-button-container">
+    <button mat-stroked-button color="primary" class="back-btn" routerLink="/">
+      <mat-icon style="font-size: 18px; width: 18px; height: 18px; margin-right: 5px; vertical-align: middle;">arrow_back</mat-icon>
+      Povratak na početnu stranicu
+    </button>
+  </div>
 </div>

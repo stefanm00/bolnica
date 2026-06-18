@@ -22,6 +22,14 @@ mat-icon {
   vertical-align: middle;
 }
 .gornja-traka {
-  background-color: #D4EAF7; /* Za nijansu tamnija od bočnog menija */
+  background-color: #E3F2FD;   /* Za nijansu tamnija od bočnog menija */
   border-bottom: 1px solid #C6E0F5; /* Zadržavamo istu ivicu da se sve lepo uklopi */
+}
+.menu-section-title {
+  font-size: 14px;
+  text-transform: uppercase; /* Sva slova velika za profi izgled */
+  letter-spacing: 1px;       /* Blagi razmak između slova */
+  color: #64748b;            /* Elegantna, mat sivo-plava boja */
+  font-weight: 600;
+  padding: 15px 0 10px 15px; /* Lep razmak od vrha i ivica */
 }

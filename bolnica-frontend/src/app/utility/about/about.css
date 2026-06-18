@@ -1,0 +1,68 @@
+.container {
+  margin: -20px;
+  min-height: calc(100vh - 64px);
+  padding: 40px 20px;
+  box-sizing: border-box;
+
+  /* --- OVDE UBACUJEŠ SLIKU UMESTO BOJE --- */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.17), rgba(0, 0, 0, 0.17)), url('/bolnica.jpg');
+  background-size: cover;      /* Razvlači sliku preko celog ekrana bez deformisanja */
+  background-position: center;  /* Centrira sliku */
+  background-repeat: no-repeat; /* Sprečava ponavljanje slike */
+  background-attachment: fixed; /* Drži sliku fiksiranom, što daje premium efekat */
+  /* -------------------------------------- */
+
+  display: flex;
+  flex-direction: column;   
+  align-items: center;      
+  justify-content: flex-start;
+  gap: 30px;                
+}
+
+.info-card {
+  margin-top: 200px;
+  width: 100%;
+  max-width: 900px; 
+  padding: 30px 30px !important;
+  
+  /* PROZIRNA POZADINA UMESTO ČISTO BELE */
+  background-color: rgba(255, 255, 255, 0.5) !important; 
+  
+  /* ZAMAGLJIVANJE SLIKE IZA KARTICE */
+  -webkit-backdrop-filter: blur(8px) !important;
+  backdrop-filter: blur(8px) !important;
+  
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+.info-card p, .info-card li {
+  font-size: 16px !important;
+  line-height: 1.8 !important;
+}
+
+
+.back-button-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+
+.back-btn {
+  /* ... tvoji postojeći stilovi (border-radius, padding...) ostaju isti ... */
+  border-radius: 20px !important;
+  padding: 0 25px !important;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease !important;
+
+  /* DODAJ SAMO OVE DVE LINIJE: */
+  background-color: rgba(255, 255, 255, 0.7) !important; /* Mlečno bela pozadina (85% vidljivosti) */
+}
+
+
+.back-btn:hover {
+  background-color: rgba(33, 150, 243, 0.05) !important;
+  transform: translateX(-5px); 
+}

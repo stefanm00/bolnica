@@ -1,8 +1,8 @@
 <div class="container">
   <mat-card class="info-card">
-    <mat-card-title style="margin-bottom: 20px;">O aplikaciji</mat-card-title>
+    <mat-card-title style="margin-left: 15px; text-align: left;">Informacije o aplikaciji</mat-card-title>
     <mat-card-content>
-      <p>Ovo je višeslojna aplikacija razvijena kao predispitni zadatak/projekat.</p>
+      <p>Ovo je aplikacija za podršku informacionog sistema bolnice, gde se prate i memorišu bolnice i njihova odeljenja te pacijenti i njihove dijagnoze, rađena kao predispitna obaveza. Sekcija za informacije o bolnicama i odeljenjima se nalazi u padajućem meniju objekata a evidencija informacija o pacijentima i njihovim dijagnozama se nalazi u medicinskoj evidenciji. Takođe su tu početna stranica, stranica sa informacijama o autoru i stranica sa opštim informacijama aplikacije.</p>
       <ul style="text-align: left;">
         <li><b>Frontend:</b> Angular sa Angular Material bibliotekom.</li>
         <li><b>Backend:</b> Java Spring Boot.</li>
@@ -10,4 +10,10 @@
       </ul>
     </mat-card-content>
   </mat-card>
-</div>
+ <div class="back-button-container">
+    <button mat-stroked-button color="primary" class="back-btn" routerLink="/">
+      <mat-icon style="font-size: 18px; width: 18px; height: 18px; margin-right: 5px; vertical-align: middle;">arrow_back</mat-icon>
+      Povratak na početnu stranicu
+    </button>
+  </div>
+  </div>
