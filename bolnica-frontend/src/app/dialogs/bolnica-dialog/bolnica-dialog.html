@@ -1,1 +1,36 @@
-<p>bolnica-dialog works!</p>
+<div class="container">
+  <h3 mat-dialog-title *ngIf="flag === 1">Dodavanje bolnice</h3>
+  <h3 mat-dialog-title *ngIf="flag === 2">Modifikacija bolnice: {{data.naziv}}</h3>
+  <h3 mat-dialog-title *ngIf="flag === 3">Brisanje bolnice: {{data.naziv}}</h3>
+
+  <div mat-dialog-content class="mat-typography">
+    <form class="mat-dialog-content">
+      <mat-form-field *ngIf="flag !== 1">
+        <mat-label>ID</mat-label>
+        <input matInput placeholder="ID" [(ngModel)]="data.id" name="id" disabled>
+      </mat-form-field>
+      
+      <mat-form-field>
+        <mat-label>Naziv</mat-label>
+        <input matInput placeholder="Naziv" [(ngModel)]="data.naziv" name="naziv" [disabled]="flag === 3" required>
+      </mat-form-field>
+      
+      <mat-form-field>
+        <mat-label>Adresa</mat-label>
+        <input matInput placeholder="Adresa" [(ngModel)]="data.adresa" name="adresa" [disabled]="flag === 3" required>
+      </mat-form-field>
+      
+      <mat-form-field>
+        <mat-label>Budžet</mat-label>
+        <input type="number" matInput placeholder="Budžet" [(ngModel)]="data.budzet" name="budzet" [disabled]="flag === 3" required>
+      </mat-form-field>
+    </form>
+  </div>
+
+  <div mat-dialog-actions>
+    <button mat-button *ngIf="flag === 1" type="submit" [mat-dialog-close]="1" (click)="add()">Sačuvaj</button>
+    <button mat-button *ngIf="flag === 2" type="submit" [mat-dialog-close]="1" (click)="update()">Sačuvaj</button>
+    <button mat-button *ngIf="flag === 3" type="submit" [mat-dialog-close]="1" (click)="delete()">Obriši</button>
+    <button mat-button (click)="cancel()">Poništi</button>
+  </div>
+</div>

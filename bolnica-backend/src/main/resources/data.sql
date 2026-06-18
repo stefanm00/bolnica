@@ -57,3 +57,9 @@ VALUES
 (8, 'Luka', 'Vasiljevic', false, '1979-10-05', 8, 8),
 (9, 'Teodora', 'Savic', true, '2004-04-14', 9, 7),
 (10, 'Andrej', 'Kovacevic', true, '1998-12-01', 10, 10);
+
+
+ALTER SEQUENCE bolnica_seq RESTART WITH 11;
+ALTER SEQUENCE dijagnoza_seq RESTART WITH 11;
+ALTER SEQUENCE odeljenje_seq RESTART WITH 11;
+ALTER SEQUENCE pacijent_seq RESTART WITH 11;

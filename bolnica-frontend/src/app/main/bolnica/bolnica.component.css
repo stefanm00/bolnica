@@ -1,0 +1,22 @@
+.container {
+  margin: 20px;
+}
+
+mat-form-field {
+  width: 100%;
+  padding: 10px 20px 0 20px;
+}
+
+.title-center {
+  width: 100%;
+  text-align: center;
+}
+
+mat-cell, mat-header-cell {
+  justify-content: flex-start;
+}
+
+mat-cell:last-child, mat-header-cell:last-child {
+  justify-content: flex-end;
+  padding-right: 20px;
+}

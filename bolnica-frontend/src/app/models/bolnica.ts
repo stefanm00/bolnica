@@ -1,6 +1,6 @@
-export interface Bolnica {
-  id: number;
-  naziv: string;
-  adresa: string;
-  budzet: number;
+export class Bolnica {
+    id!: number;
+    naziv!: string;
+    adresa!: string;
+    budzet!: number;
 }
